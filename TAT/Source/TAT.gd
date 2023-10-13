@@ -8,9 +8,3 @@ func _ready():
 	add_child(starting_village)
 	var player = player_s.instantiate()
 	add_child(player)
-	
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
