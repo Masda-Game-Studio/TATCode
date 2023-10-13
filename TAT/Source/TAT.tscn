@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfdyfd6pvh457"]
+
+[ext_resource type="Script" path="res://Source/TAT.gd" id="1_gdytv"]
+
+[node name="TAT" type="Node"]
+script = ExtResource("1_gdytv")
