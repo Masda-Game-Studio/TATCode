@@ -2,5 +2,6 @@
 
 [ext_resource type="Script" path="res://Source/TAT.gd" id="1_gdytv"]
 
-[node name="TAT" type="Node"]
+[node name="TAT" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_gdytv")

@@ -1,13 +1,15 @@
 extends CharacterBody2D
+
 var speed = 200
 var input_direction 
 var sprite
 var last_direction
+
 func _ready():
 	sprite = get_node("Sprite")
 	sprite.animation = "DOWN_IDLE"
 	sprite.play()
-	
+
 func playerMovement():
 	input_direction = Vector2(
 		Input.get_action_strength("Right") - Input.get_action_strength("Left"),
@@ -15,8 +17,6 @@ func playerMovement():
 	)
 	velocity = input_direction * speed
 	move_and_slide()
-func _physics_process(_delta):
-	playerMovement()
 
 func playerAnimation():
 	if(input_direction ==Vector2(0,-1)):
@@ -44,5 +44,10 @@ func playerAnimation():
 		elif(last_direction == "right"):
 			sprite.animation = "SIDE_IDLE"
 			sprite.flip_h = true
+
+func _physics_process(_delta):
+	playerMovement()
+
 func _process(_delta):
 	playerAnimation()
+	print(get_node("FollowCam").limit_right)

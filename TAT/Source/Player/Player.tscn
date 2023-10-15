@@ -272,20 +272,29 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_meh5t"]
-radius = 7.0
-height = 14.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rnukv"]
+radius = 4.0
+height = 17.0
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
+y_sort_enabled = true
+texture_filter = 1
+scale = Vector2(2, 2)
 script = ExtResource("1_q8k5c")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pe53k")
 animation = &"SIDE_WALK"
+offset = Vector2(0, -15)
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 15)
-shape = SubResource("CapsuleShape2D_meh5t")
+position = Vector2(0, -2)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_rnukv")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.5, 1.5)
+[node name="FollowCam" type="Camera2D" parent="."]
+zoom = Vector2(2.3, 2.3)
+limit_left = 0
+limit_top = 0
+limit_smoothed = true
