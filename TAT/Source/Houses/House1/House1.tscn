@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyl4wgsmbbily"]
+
+[ext_resource type="Script" path="res://Source/Houses/House1/House1.gd" id="1_3uyck"]
+[ext_resource type="Texture2D" uid="uid://cxgx4rroifpd0" path="res://Data/Textures/Houses/House1.png" id="1_jhus3"]
+[ext_resource type="Texture2D" uid="uid://cl346en7ko7ar" path="res://Data/Textures/UI/PRIMARY_INTERACTION.png" id="3_gr6ps"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3knr"]
+size = Vector2(185, 54)
+
+[node name="House1" type="StaticBody2D"]
+z_index = 1
+y_sort_enabled = true
+texture_filter = 1
+script = ExtResource("1_3uyck")
+
+[node name="Collision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(92, 115, -92, 117, -94, 62, -113, 52, -113, 42, -58, 41, -57, -35, 59, -35, 59, 41, 111, 42, 111, 42, 112, 52, 94, 64)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture = ExtResource("1_jhus3")
+region_enabled = true
+region_rect = Rect2(0, 0, 224, 234)
+
+[node name="Enterance" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="Enterance"]
+position = Vector2(0.5, 122)
+shape = SubResource("RectangleShape2D_a3knr")
+
+[node name="InteractB" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(0, 146)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_gr6ps")
+
+[node name="QuestLabel" type="Label" parent="."]
+visible = false
+z_index = 1
+texture_filter = 1
+offset_left = -73.0
+offset_top = 23.0
+offset_right = 87.0
+offset_bottom = 49.0
+text = "First quest accepted!"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="body_shape_entered" from="Enterance" to="." method="onCharacterEnter"]
+[connection signal="body_shape_exited" from="Enterance" to="." method="onCharacterExit"]
+[connection signal="timeout" from="Timer" to="." method="onLabelTimerTimeout"]
