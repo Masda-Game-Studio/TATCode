@@ -1,0 +1,170 @@
+[gd_scene load_steps=7 format=3 uid="uid://drrp2pjwqdeqy"]
+
+[ext_resource type="PackedScene" uid="uid://cjn2gofp0rfbg" path="res://Source/UI/Inventory/Slot.tscn" id="1_awthv"]
+[ext_resource type="Script" path="res://Source/UI/BottomBar/BottomBar.gd" id="1_x2t1u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dhbea"]
+bg_color = Color(0, 0.392157, 0.117647, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_flkm0"]
+bg_color = Color(0, 0.890196, 0.521569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w0ju6"]
+bg_color = Color(0.454902, 0.0862745, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nn38c"]
+bg_color = Color(0.968627, 0, 0, 1)
+
+[node name="BottomBar" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_top = 930.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("1_x2t1u")
+
+[node name="background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 150.0
+color = Color(0, 0.427451, 0.278431, 1)
+
+[node name="slot_1" parent="." instance=ExtResource("1_awthv")]
+layout_mode = 0
+offset_left = 713.0
+offset_right = 777.0
+
+[node name="Label" type="Label" parent="slot_1"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 4.0
+offset_right = 86.0
+offset_bottom = 30.0
+text = "1"
+
+[node name="cooldown_background" type="ColorRect" parent="slot_1"]
+visible = false
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+color = Color(0, 0, 0, 0.513726)
+
+[node name="cooldown_l" type="Label" parent="slot_1/cooldown_background"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(0.129412, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="slot_2" parent="." instance=ExtResource("1_awthv")]
+layout_mode = 0
+offset_left = 809.0
+offset_right = 873.0
+
+[node name="Label" type="Label" parent="slot_2"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 4.0
+offset_right = 88.0
+offset_bottom = 30.0
+text = "2"
+
+[node name="slot_3" parent="." instance=ExtResource("1_awthv")]
+layout_mode = 0
+offset_left = 910.0
+offset_right = 974.0
+
+[node name="Label" type="Label" parent="slot_3"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 4.0
+offset_right = 86.0
+offset_bottom = 30.0
+text = "3"
+
+[node name="slot_4" parent="." instance=ExtResource("1_awthv")]
+layout_mode = 0
+offset_left = 1013.0
+offset_right = 1077.0
+
+[node name="Label" type="Label" parent="slot_4"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 4.0
+offset_right = 86.0
+offset_bottom = 30.0
+text = "4"
+
+[node name="health_bar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 65.0
+offset_right = 1100.0
+offset_bottom = 105.0
+theme_override_styles/background = SubResource("StyleBoxFlat_dhbea")
+theme_override_styles/fill = SubResource("StyleBoxFlat_flkm0")
+value = 5.04
+show_percentage = false
+
+[node name="health_l" type="Label" parent="health_bar"]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 5.0
+offset_right = 169.0
+offset_bottom = 31.0
+text = "800"
+
+[node name="slash_l" type="Label" parent="health_bar"]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 5.0
+offset_right = 214.0
+offset_bottom = 31.0
+text = "/"
+
+[node name="max_health_l" type="Label" parent="health_bar"]
+layout_mode = 0
+offset_left = 197.0
+offset_top = 5.0
+offset_right = 237.0
+offset_bottom = 31.0
+text = "100"
+
+[node name="stamina_bar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 110.0
+offset_right = 1100.0
+offset_bottom = 150.0
+theme_override_styles/background = SubResource("StyleBoxFlat_w0ju6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_nn38c")
+value = 8.01
+show_percentage = false
+
+[node name="stamina_l" type="Label" parent="stamina_bar"]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 9.0
+offset_right = 169.0
+offset_bottom = 35.0
+text = "80"
+
+[node name="slash_l" type="Label" parent="stamina_bar"]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 9.0
+offset_right = 214.0
+offset_bottom = 35.0
+text = "/"
+
+[node name="max_stamina_l" type="Label" parent="stamina_bar"]
+layout_mode = 0
+offset_left = 197.0
+offset_top = 9.0
+offset_right = 237.0
+offset_bottom = 35.0
+text = "100"

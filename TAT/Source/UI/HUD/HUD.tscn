@@ -1,0 +1,99 @@
+[gd_scene load_steps=7 format=3 uid="uid://dbbukkbs3uioh"]
+
+[ext_resource type="PackedScene" uid="uid://b8vv8t0n2s842" path="res://Source/UI/Inventory/Inventory.tscn" id="1_fwbwu"]
+[ext_resource type="Script" path="res://Source/UI/HUD/HUD.gd" id="1_n68jh"]
+[ext_resource type="PackedScene" uid="uid://bl0ikigoaojxd" path="res://Source/UI/Menu/Menu.tscn" id="1_w7ov3"]
+[ext_resource type="PackedScene" uid="uid://drrp2pjwqdeqy" path="res://Source/UI/BottomBar/BottomBar.tscn" id="3_kb684"]
+[ext_resource type="PackedScene" uid="uid://dnrcolbl65ctg" path="res://Source/UI/Quest/Quest.tscn" id="6_1v1rx"]
+[ext_resource type="Texture2D" uid="uid://bwruqepts3mqh" path="res://Data/Textures/Items/Item1.png" id="6_7o07x"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_n68jh")
+
+[node name="menu" parent="." instance=ExtResource("1_w7ov3")]
+offset_left = 603.0
+offset_top = 5.0
+offset_right = -717.0
+offset_bottom = -275.0
+
+[node name="inventory" parent="." instance=ExtResource("1_fwbwu")]
+offset_left = -669.0
+offset_top = -204.0
+offset_right = -3.0
+offset_bottom = 107.0
+
+[node name="bottom_bar" parent="." instance=ExtResource("3_kb684")]
+
+[node name="character_page_b_background" type="ColorRect" parent="."]
+offset_left = 1783.0
+offset_top = 1016.0
+offset_right = 1847.0
+offset_bottom = 1080.0
+
+[node name="menu_b_background" type="ColorRect" parent="."]
+offset_left = 1853.0
+offset_top = 1016.0
+offset_right = 1917.0
+offset_bottom = 1080.0
+
+[node name="bag_b_background" type="ColorRect" parent="."]
+offset_left = 1714.0
+offset_top = 1016.0
+offset_right = 1778.0
+offset_bottom = 1080.0
+
+[node name="bag_b_sprite" type="Sprite2D" parent="."]
+position = Vector2(1747, 1049)
+scale = Vector2(2, 2)
+texture = ExtResource("6_7o07x")
+region_enabled = true
+region_rect = Rect2(197, 387, 23, 28)
+
+[node name="character_page_b_sprite" type="Sprite2D" parent="."]
+position = Vector2(1817, 1048)
+scale = Vector2(2, 2)
+texture = ExtResource("6_7o07x")
+region_enabled = true
+region_rect = Rect2(38, 227, 21, 28)
+
+[node name="menu_b_sprite" type="Sprite2D" parent="."]
+position = Vector2(1886, 1050)
+scale = Vector2(2, 2)
+texture = ExtResource("6_7o07x")
+region_enabled = true
+region_rect = Rect2(100, 6, 25, 24)
+
+[node name="bag_b" type="Button" parent="."]
+offset_left = 1714.0
+offset_top = 1016.0
+offset_right = 1778.0
+offset_bottom = 1080.0
+focus_mode = 0
+flat = true
+
+[node name="character_page_b" type="Button" parent="."]
+offset_left = 1783.0
+offset_top = 1016.0
+offset_right = 1847.0
+offset_bottom = 1080.0
+focus_mode = 0
+flat = true
+
+[node name="menu_b" type="Button" parent="."]
+offset_left = 1853.0
+offset_top = 1016.0
+offset_right = 1917.0
+offset_bottom = 1080.0
+focus_mode = 0
+flat = true
+
+[node name="quest" parent="." instance=ExtResource("6_1v1rx")]
+visible = false
+offset_left = 4.0
+offset_top = -447.0
+offset_right = 1319.0
+offset_bottom = 385.0
+
+[connection signal="pressed" from="bag_b" to="." method="onBagBPressed"]
+[connection signal="pressed" from="character_page_b" to="." method="onCharacterPageBPressed"]
+[connection signal="pressed" from="menu_b" to="." method="onMenuBPressed"]

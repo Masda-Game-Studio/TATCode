@@ -1,17 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfdyfd6pvh457"]
+[gd_scene load_steps=2 format=3 uid="uid://cyfbrn7mq80ma"]
 
 [ext_resource type="Script" path="res://Source/TAT.gd" id="1_gdytv"]
-[ext_resource type="PackedScene" uid="uid://cuc11c1e5by6j" path="res://Source/MainMenu/MainMenu.tscn" id="3_q8ccd"]
 
 [node name="TAT" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_gdytv")
-
-[node name="MainMenu" parent="." instance=ExtResource("3_q8ccd")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 1920.0
-offset_bottom = 1080.0
-grow_horizontal = 1
-grow_vertical = 1

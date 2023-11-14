@@ -1,0 +1,345 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnrcolbl65ctg"]
+
+[ext_resource type="Script" path="res://Source/UI/Quest/Quest.gd" id="1_af4xo"]
+[ext_resource type="Texture2D" uid="uid://p86654g2uruy" path="res://Data/Textures/UI/UI books & more.png" id="4_cod77"]
+[ext_resource type="FontFile" uid="uid://by775lrkr2cuj" path="res://Data/Textures/Fonts/cardinal/Cardinal.ttf" id="4_shmf4"]
+
+[node name="Quest" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -375.0
+offset_right = 1315.0
+offset_bottom = 457.0
+grow_vertical = 2
+script = ExtResource("1_af4xo")
+metadata/_edit_vertical_guides_ = [-519.0]
+
+[node name="quest_page" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="background" type="Sprite2D" parent="quest_page"]
+texture_filter = 1
+position = Vector2(786, 613)
+scale = Vector2(14, 14)
+texture = ExtResource("4_cod77")
+region_enabled = true
+region_rect = Rect2(560, 16, 48, 64)
+
+[node name="title_l" type="Label" parent="quest_page"]
+texture_filter = 1
+offset_left = 516.0
+offset_top = 244.0
+offset_right = 1048.0
+offset_bottom = 344.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_shmf4")
+theme_override_font_sizes/font_size = 60
+text = "Quest Title"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="description_l" type="Label" parent="quest_page"]
+texture_filter = 1
+offset_left = 537.0
+offset_top = 385.0
+offset_right = 1019.0
+offset_bottom = 677.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "Quest Description"
+autowrap_mode = 3
+
+[node name="objective_description_l" type="Label" parent="quest_page"]
+texture_filter = 1
+offset_left = 537.0
+offset_top = 804.0
+offset_right = 851.0
+offset_bottom = 870.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "objective_description:"
+
+[node name="objective_l" type="Label" parent="quest_page"]
+texture_filter = 1
+offset_left = 858.0
+offset_top = 806.0
+offset_right = 1019.0
+offset_bottom = 872.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="slash_l" type="Label" parent="quest_page"]
+texture_filter = 1
+offset_left = 887.0
+offset_top = 806.0
+offset_right = 1048.0
+offset_bottom = 872.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "/"
+
+[node name="max_objective_l" type="Label" parent="quest_page"]
+texture_filter = 1
+offset_left = 912.0
+offset_top = 806.0
+offset_right = 1073.0
+offset_bottom = 872.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "2"
+
+[node name="reward_description_l" type="Label" parent="quest_page"]
+texture_filter = 1
+offset_left = 537.0
+offset_top = 868.0
+offset_right = 851.0
+offset_bottom = 934.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Reward:"
+
+[node name="reward_l" type="Label" parent="quest_page"]
+texture_filter = 1
+offset_left = 718.0
+offset_top = 864.0
+offset_right = 1032.0
+offset_bottom = 930.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "copper"
+
+[node name="exit_background" type="ColorRect" parent="quest_page"]
+offset_left = 1038.0
+offset_top = 178.0
+offset_right = 1108.0
+offset_bottom = 252.0
+color = Color(0.396078, 0.156863, 0.137255, 1)
+
+[node name="exit_b" type="Button" parent="quest_page/exit_background"]
+layout_mode = 0
+offset_right = 70.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 45
+text = "X"
+flat = true
+
+[node name="accept_background" type="ColorRect" parent="quest_page"]
+offset_left = 471.0
+offset_top = 968.0
+offset_right = 625.0
+offset_bottom = 1042.0
+color = Color(0.396078, 0.156863, 0.137255, 1)
+
+[node name="accept_b" type="Button" parent="quest_page/accept_background"]
+layout_mode = 0
+offset_top = -4.0
+offset_right = 154.0
+offset_bottom = 70.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 45
+text = "Accept"
+flat = true
+
+[node name="complete_background" type="ColorRect" parent="quest_page"]
+offset_left = 471.0
+offset_top = 964.0
+offset_right = 689.0
+offset_bottom = 1038.0
+color = Color(0.396078, 0.156863, 0.137255, 1)
+
+[node name="complete_b" type="Button" parent="quest_page/complete_background"]
+layout_mode = 0
+offset_right = 70.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 45
+text = "Complete"
+flat = true
+
+[node name="nine_patch_rect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 450.0
+offset_bottom = 828.0
+
+[node name="background" type="Sprite2D" parent="nine_patch_rect"]
+position = Vector2(225, 414)
+scale = Vector2(9.78261, 13.3548)
+texture = ExtResource("4_cod77")
+region_enabled = true
+region_rect = Rect2(657, 17, 46, 62)
+
+[node name="grid_container" type="GridContainer" parent="nine_patch_rect"]
+layout_mode = 0
+offset_right = 450.0
+offset_bottom = 828.0
+
+[node name="slot_1" type="ColorRect" parent="nine_patch_rect/grid_container"]
+visible = false
+clip_contents = true
+custom_minimum_size = Vector2(450, 100)
+layout_mode = 2
+color = Color(0, 0.705882, 0.313726, 1)
+
+[node name="quest_b" type="Button" parent="nine_patch_rect/grid_container/slot_1"]
+layout_mode = 0
+offset_right = 450.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 30
+text = "Title"
+flat = true
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="slot_2" type="ColorRect" parent="nine_patch_rect/grid_container"]
+visible = false
+clip_contents = true
+custom_minimum_size = Vector2(450, 100)
+layout_mode = 2
+color = Color(0, 0.705882, 0.313726, 1)
+
+[node name="quest_b" type="Button" parent="nine_patch_rect/grid_container/slot_2"]
+layout_mode = 0
+offset_right = 450.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 30
+text = "Title"
+flat = true
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="slot_3" type="ColorRect" parent="nine_patch_rect/grid_container"]
+visible = false
+clip_contents = true
+custom_minimum_size = Vector2(450, 100)
+layout_mode = 2
+color = Color(0, 0.705882, 0.313726, 1)
+
+[node name="quest_b" type="Button" parent="nine_patch_rect/grid_container/slot_3"]
+layout_mode = 0
+offset_right = 450.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 30
+text = "Title"
+flat = true
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="slot_4" type="ColorRect" parent="nine_patch_rect/grid_container"]
+visible = false
+clip_contents = true
+custom_minimum_size = Vector2(450, 100)
+layout_mode = 2
+color = Color(0, 0.705882, 0.313726, 1)
+
+[node name="quest_b" type="Button" parent="nine_patch_rect/grid_container/slot_4"]
+layout_mode = 0
+offset_right = 450.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 30
+text = "Title"
+flat = true
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="slot_5" type="ColorRect" parent="nine_patch_rect/grid_container"]
+visible = false
+clip_contents = true
+custom_minimum_size = Vector2(450, 100)
+layout_mode = 2
+color = Color(0, 0.705882, 0.313726, 1)
+
+[node name="quest_b" type="Button" parent="nine_patch_rect/grid_container/slot_5"]
+layout_mode = 0
+offset_right = 450.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 30
+text = "Title"
+flat = true
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="slot_6" type="ColorRect" parent="nine_patch_rect/grid_container"]
+visible = false
+clip_contents = true
+custom_minimum_size = Vector2(450, 100)
+layout_mode = 2
+color = Color(0, 0.705882, 0.313726, 1)
+
+[node name="quest_b" type="Button" parent="nine_patch_rect/grid_container/slot_6"]
+layout_mode = 0
+offset_right = 450.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 30
+text = "Title"
+flat = true
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="slot_7" type="ColorRect" parent="nine_patch_rect/grid_container"]
+visible = false
+clip_contents = true
+custom_minimum_size = Vector2(450, 100)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 2
+color = Color(0, 0.705882, 0.313726, 1)
+
+[node name="quest_b" type="Button" parent="nine_patch_rect/grid_container/slot_7"]
+layout_mode = 0
+offset_right = 450.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 30
+text = "Title"
+flat = true
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="slot_8" type="ColorRect" parent="nine_patch_rect/grid_container"]
+visible = false
+clip_contents = true
+custom_minimum_size = Vector2(450, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+color = Color(0, 0.705882, 0.313726, 1)
+
+[node name="quest_b" type="Button" parent="nine_patch_rect/grid_container/slot_8"]
+layout_mode = 0
+offset_right = 450.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 30
+text = "Title"
+flat = true
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="quest_message" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 856.0
+offset_top = 308.0
+offset_right = 1283.0
+offset_bottom = 458.0
+text = "Quest log is full!"
+
+[node name="quest_message_timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="pressed" from="quest_page/exit_background/exit_b" to="." method="onQuestPageExitBPressed"]
+[connection signal="pressed" from="quest_page/accept_background/accept_b" to="." method="onAcceptBPressed"]
+[connection signal="pressed" from="quest_page/complete_background/complete_b" to="." method="onCompleteBPressed"]
+[connection signal="pressed" from="nine_patch_rect/grid_container/slot_1/quest_b" to="." method="onQuest1BPressed"]
+[connection signal="pressed" from="nine_patch_rect/grid_container/slot_2/quest_b" to="." method="onQuest2BPressed"]
+[connection signal="pressed" from="nine_patch_rect/grid_container/slot_3/quest_b" to="." method="onQuest3BPressed"]
+[connection signal="pressed" from="nine_patch_rect/grid_container/slot_4/quest_b" to="." method="onQuest4BPressed"]
+[connection signal="pressed" from="nine_patch_rect/grid_container/slot_5/quest_b" to="." method="onQuest5BPressed"]
+[connection signal="pressed" from="nine_patch_rect/grid_container/slot_6/quest_b" to="." method="onQuest6BPressed"]
+[connection signal="pressed" from="nine_patch_rect/grid_container/slot_7/quest_b" to="." method="onQuest7BPressed"]
+[connection signal="pressed" from="nine_patch_rect/grid_container/slot_8/quest_b" to="." method="onQuest8BPressed"]
+[connection signal="timeout" from="quest_message_timer" to="." method="onQuestMessageTimerTimeout"]

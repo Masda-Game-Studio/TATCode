@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjn2gofp0rfbg"]
+
+[ext_resource type="Texture2D" uid="uid://den5x6hc1osg5" path="res://Data/Textures/Items/ItemSet1.png" id="1_cly56"]
+
+[node name="Slot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(64, 64)
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="background" type="Sprite2D" parent="."]
+texture = ExtResource("1_cly56")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="item" type="Sprite2D" parent="."]
+position = Vector2(32, 32)
+scale = Vector2(1.5, 1.5)
+region_enabled = true

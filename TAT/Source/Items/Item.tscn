@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cv5v0yiinelxn"]
+
+[ext_resource type="Script" path="res://Source/Items/Item.gd" id="1_b331c"]
+[ext_resource type="Texture2D" uid="uid://bwruqepts3mqh" path="res://Data/Textures/Items/Item1.png" id="1_dlmly"]
+[ext_resource type="Texture2D" uid="uid://cl346en7ko7ar" path="res://Data/Textures/UI/PRIMARY_INTERACTION.png" id="2_x6dm8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqyat"]
+size = Vector2(46, 40)
+
+[node name="Item" type="Sprite2D"]
+texture = ExtResource("1_dlmly")
+region_enabled = true
+region_rect = Rect2(5, 165, 23, 24)
+script = ExtResource("1_b331c")
+
+[node name="detection_area" type="Area2D" parent="."]
+
+[node name="shape" type="CollisionShape2D" parent="detection_area"]
+shape = SubResource("RectangleShape2D_hqyat")
+
+[node name="pick_button" type="TextureRect" parent="."]
+visible = false
+z_index = 2
+offset_left = 25.0
+offset_top = -5.0
+offset_right = 125.0
+offset_bottom = 95.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_x6dm8")
+
+[connection signal="body_shape_entered" from="detection_area" to="." method="onCharacterEntered"]
+[connection signal="body_shape_exited" from="detection_area" to="." method="onCharacterExited"]

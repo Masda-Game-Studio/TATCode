@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=3 uid="uid://cuc11c1e5by6j"]
+
+[ext_resource type="Texture2D" uid="uid://bd1ovwcnltax3" path="res://Data/Textures/UI/Logo/Logo.png" id="1_rdorl"]
+[ext_resource type="Script" path="res://Source/UI/MainMenu/MainMenu.gd" id="1_twv3b"]
+[ext_resource type="Texture2D" uid="uid://bbwv2pf627e60" path="res://Data/Textures/UI/GameLogo/GameLogo V 0.4.0.png" id="2_14bs4"]
+[ext_resource type="FontFile" uid="uid://by775lrkr2cuj" path="res://Data/Textures/Fonts/cardinal/Cardinal.ttf" id="3_ru7bq"]
+
+[node name="MainMenu" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_twv3b")
+
+[node name="timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="background" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_14bs4")
+
+[node name="start_b_background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 98.0
+offset_right = 439.0
+offset_bottom = 232.0
+color = Color(0, 0, 0, 0.745098)
+
+[node name="exit_b_background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 250.0
+offset_right = 439.0
+offset_bottom = 384.0
+color = Color(0, 0, 0, 0.745098)
+
+[node name="start_b" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 57.0
+offset_top = 98.0
+offset_right = 439.0
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 0.45098, 0.458824, 1)
+theme_override_fonts/font = ExtResource("3_ru7bq")
+theme_override_font_sizes/font_size = 95
+text = "START"
+flat = true
+
+[node name="exit_b" type="Button" parent="."]
+layout_mode = 1
+offset_left = 57.0
+offset_top = 250.0
+offset_right = 439.0
+offset_bottom = 384.0
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 0.45098, 0.458824, 1)
+theme_override_fonts/font = ExtResource("3_ru7bq")
+theme_override_font_sizes/font_size = 95
+text = "EXIT"
+flat = true
+
+[node name="splash_screen" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_rdorl")
+expand_mode = 1
+
+[connection signal="timeout" from="timer" to="." method="onTimerTimeout"]
+[connection signal="pressed" from="start_b" to="." method="onStartBPressed"]
+[connection signal="pressed" from="exit_b" to="." method="onExitBPressed"]

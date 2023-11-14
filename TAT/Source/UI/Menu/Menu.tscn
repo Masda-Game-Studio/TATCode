@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl0ikigoaojxd"]
+
+[ext_resource type="Script" path="res://Source/UI/Menu/Menu.gd" id="1_ieup4"]
+[ext_resource type="FontFile" uid="uid://by775lrkr2cuj" path="res://Data/Textures/Fonts/cardinal/Cardinal.ttf" id="2_hrnvf"]
+
+[node name="Menu" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 635.0
+offset_top = 151.0
+offset_right = -685.0
+offset_bottom = -129.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ieup4")
+
+[node name="background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 800.0
+color = Color(0.266667, 0.239216, 0.168627, 0.537255)
+
+[node name="resume_b_background" type="ColorRect" parent="background"]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 134.0
+offset_right = 502.0
+offset_bottom = 334.0
+color = Color(0.360784, 0.211765, 0.0352941, 1)
+
+[node name="exit_b_background" type="ColorRect" parent="background"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 440.0
+offset_right = 504.0
+offset_bottom = 640.0
+color = Color(0.360784, 0.211765, 0.0352941, 1)
+
+[node name="resume_b" type="Button" parent="background"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 133.0
+offset_right = 504.0
+offset_bottom = 333.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_hrnvf")
+theme_override_font_sizes/font_size = 100
+text = "Resume"
+flat = true
+
+[node name="exit_b" type="Button" parent="background"]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 440.0
+offset_right = 502.0
+offset_bottom = 640.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_hrnvf")
+theme_override_font_sizes/font_size = 100
+text = "Exit"
+flat = true
+
+[connection signal="pressed" from="background/resume_b" to="." method="onResumeBPressed"]
+[connection signal="pressed" from="background/exit_b" to="." method="onExitBPressed"]
